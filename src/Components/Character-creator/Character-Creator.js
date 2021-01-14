@@ -1,5 +1,6 @@
 import React from 'react'
 import './Character-Creator.css'
+import { Link } from 'react-router-dom'
 
 export default function CharacterCreator() {
   return (
@@ -27,6 +28,7 @@ export default function CharacterCreator() {
             <label for="quote">Favorite Quote</label>
             <label for="insult">Favorite Insult</label>
           </div>
+          <div></div>
           <div className="character-creation" id="yes">
             <h2>Yes</h2>
             <input type="radio" id="birthplace" name="birthplace" />
@@ -51,6 +53,11 @@ export default function CharacterCreator() {
         </div>
         </div>
       </form>
+      <Link to="/archive">
+        <div className="submit">
+          <button>Submit</button>
+        </div>
+      </Link>
     </div>
   )
 }
