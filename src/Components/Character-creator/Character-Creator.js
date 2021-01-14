@@ -3,6 +3,10 @@ import './Character-Creator.css'
 import { Link } from 'react-router-dom'
 
 export default function CharacterCreator() {
+  function handleSubmit(e) {
+    e.preventDefault()
+  }
+
   return (
     <div className="complete-page">
       <h1>Make a Character</h1>
@@ -55,7 +59,7 @@ export default function CharacterCreator() {
       </form>
       <Link to="/archive">
         <div className="submit">
-          <button>Submit</button>
+          <button onSubmit={ handleSubmit }>Submit</button>
         </div>
       </Link>
     </div>
