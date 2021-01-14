@@ -57,7 +57,7 @@ export default function CharacterCreator() {
         </div>
         </div>
       </form>
-      <Link to="/archive">
+      <Link to={`/archive`}>
         <div className="submit">
           <button onSubmit={ handleSubmit }>Submit</button>
         </div>

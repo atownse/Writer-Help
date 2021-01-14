@@ -1,6 +1,6 @@
 import './App.css';
 import Home from '../Home/Home'
-import CharacterCreator from '../Character-creator/Character-Creator'
+import CharacterCreator from '../Character-Creator/Character-Creator'
 import Archive from '../Archive/Archive'
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom"
 
