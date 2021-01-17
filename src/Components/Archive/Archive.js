@@ -7,6 +7,7 @@ class Archive extends Component {
     let characters = cards.map(card => {
       return (
         <Card
+          key={ card.id }
           id={ card.id }
           name={ card.name }
           job={ card.job }
@@ -29,7 +30,11 @@ class Archive extends Component {
     let characterCards = this.createCharacterCards(this.props.characters)
     return (
       <div>
-        <h1>Saved Characters</h1>
+        <div>
+          <button>Home</button>
+          <h1>Saved Characters</h1>
+          <button>Create New Character</button>
+        </div>
         <div>
           { characterCards }
         </div>
