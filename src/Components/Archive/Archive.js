@@ -2,41 +2,21 @@ import React, { Component } from 'react'
 import Card from '../Card/Card'
 
 class Archive extends Component {
-  constructor() {
-    super()
-    this.state = {
-      characters: [
-        {
-          name: "johnny boy",
-          birthplace: "the moon",
-          residence: "Canada",
-          job: "Librarian",
-          height: '5\'6',
-          eyeColor: 'yellow',
-          music: 'ukulele-rock',
-          quote: 'to be or not to be, that is the question',
-          insult: 'eat a bag of dicks',
-          id: 934719837
-        },
-        {
-          name: "not johnny boy",
-          birthplace: "Lake Tahoe",
-          residence: "Australia",
-          height: '7\'2',
-          id: 2736419346
-        }
-      ]
-    }
-  }
 
   createCharacterCards(cards) {
     let characters = cards.map(card => {
       return (
         <Card
-          id = { card.id }
-          name = { card.name }
-          job = { card.job }
-          residence = { card.residence } 
+          id={ card.id }
+          name={ card.name }
+          job={ card.job }
+          birthplace={ card.birthplace }
+          residence={ card.residence }
+          height={ card.height } 
+          eyeColor={ card.eyeColor } 
+          music={ card.music } 
+          quote={ card.quote } 
+          insult={ card.insult } 
         />
       )
     })
@@ -44,7 +24,9 @@ class Archive extends Component {
   }
 
   render() {  
-    let characterCards = this.createCharacterCards(this.state.characters)
+    // console.log('props characters', this.props.characters)
+    // console.log('state characters', this.state.characters)
+    let characterCards = this.createCharacterCards(this.props.characters)
     return (
       <div>
         <h1>Saved Characters</h1>

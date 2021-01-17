@@ -18,7 +18,7 @@ export default function Card({id, name, birthplace, job, residence, height, eyeC
     // <Link to={`/character/${id}`}>
       <section id={ id }>
         <h2>{ name }</h2>
-        <p>{ job || 'Unknown' }</p>
+        <p>Profession: { job || 'Unknown' }</p>
         <p>Birthplace: { birthplace || 'Unknown' }</p>
         <p>Home: { residence || 'Unknown' }</p>
         <p>Height: { height || 'Unknown' }</p>

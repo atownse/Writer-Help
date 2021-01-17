@@ -1,11 +1,17 @@
-import React from 'react'
+import React, { useState }from 'react'
 import './Character-Creator.css'
 import { Link } from 'react-router-dom'
 
-export default function CharacterCreator() {
-  function handleSubmit(e) {
-    e.preventDefault()
-  }
+export default function CharacterCreator(props) {
+  const [name, setName] = useState('')
+  const [birthplace, setBirthplace] = useState(false)
+  const [residence, setResidence] = useState()
+  const [job, setJob] = useState('')
+  const [height, setHeight] = useState('')
+  const [eyeColor, setEyeColor] = useState('')
+  // const [music, setMusic] = useState('')
+  // const [quote, setQuote] = useState('')
+  // const [insult, setInsult] = useState('')
 
   return (
     <div className="complete-page">
@@ -16,50 +22,59 @@ export default function CharacterCreator() {
             type="text"
             name="name"
             placeholder="Character Name Here"
-            // value={this.state.name}
-            // onChange={(e) => {this.handleChange}}
+            value={ name }
+            onChange={ (e) => setName(e.target.value) }
           />
         </div>
         <div className="container">
           <div className="character-creation">
-            <h2>Options</h2>
             <label for="birthplace">Birthplace</label>
+            <input type="checkbox" name="birthplace" checked={ birthplace } onChange={ (e) => setBirthplace(!birthplace) } />
+          </div>
+          <div>
             <label for="residence">Current City</label>
+            <input type="checkbox" name="residence" checked={ residence } onChange={ (e) => setResidence(!residence) } />
+          </div>
+          <div>
             <label for="job">Job</label>
+            <input type="checkbox" name="job" checked={ job } onChange={ (e) => setJob(!job) } />
+          </div>
+          <div>
             <label for="height">Height</label>
-            <label for="eye-color">Eye Color</label>
-            <label for="music">Favorite Music Genre</label>
+            <input type="checkbox" name="height" checked={ height } onChange={ (e) => setHeight(!height) } />
+          </div>
+          <div>
+            <label for="eyeColor">Eye Color</label>
+            <input type="checkbox" name="eyeColor" checked={ eyeColor } onChange={ (e) => setEyeColor(!eyeColor) } />
+          </div>
+          {/* <div>
+            <label for="music">Favorite Music</label>
+            <input type="checkbox" name="music" checked={ music } onChange={ (e) => setMusic(!music) } />
+          </div>
+          <div>
             <label for="quote">Favorite Quote</label>
+            <input type="checkbox" name="quote" checked={ quote } onChange={ (e) => setQuote(!quote) } />
+          </div>
+          <div>
             <label for="insult">Favorite Insult</label>
-          </div>
-          <div></div>
-          <div className="character-creation" id="yes">
-            <h2>Yes</h2>
-            <input type="radio" id="birthplace" name="birthplace" />
-            <input type="radio" id="residence" name="residence" />
-            <input type="radio" id="job" name="job" />
-            <input type="radio" id="height" name="height" />
-            <input type="radio" id="eye-color" name="eye-color" />
-            <input type="radio" id="music" name="music" />
-            <input type="radio" id="quote" name="quote" />
-            <input type="radio" id="insult" name="insult" />
-          </div>
-          <div className="character-creation" id="no">
-            <h2>No</h2>
-            <input type="radio" id="birthplace" name="birthplace" />
-            <input type="radio" id="residence" name="residence" />
-            <input type="radio" id="job" name="job" />
-            <input type="radio" id="height" name="height" />
-            <input type="radio" id="eye-color" name="eye-color" />
-            <input type="radio" id="music" name="music" />
-            <input type="radio" id="quote" name="quote" />
-            <input type="radio" id="insult" name="insult" />
-        </div>
+            <input type="checkbox" name="insult" checked={ insult } onChange={ (e) => setInsult(!insult) } />
+          </div> */}
         </div>
       </form>
       <Link to={`/archive`}>
         <div className="submit">
-          <button onSubmit={ handleSubmit }>Submit</button>
+          <button onClick={ () => {
+            const settings = {
+              shouldIncludeBirthplace: birthplace,
+              shouldIncludeJob: job,
+              shouldIncludeResidence: residence,
+              shouldIncludeHeight: height,
+              shouldIncludeEyeColor: eyeColor
+            }
+            props.onCharacterSubmitted(name, settings) 
+          }}>
+            Submit
+          </button>
         </div>
       </Link>
     </div>
