@@ -15,7 +15,7 @@ const api = {
 
   getRandomInsult: () => {
     return axios.get('https://evilinsult.com/generate_insult.php?lang=en&type=json')
-  },
+  }
 }
 
 export default api
