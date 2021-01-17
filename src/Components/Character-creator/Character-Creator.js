@@ -17,6 +17,7 @@ export default function CharacterCreator(props) {
     <div className="complete-page">
       <h1>Make a Character</h1>
       <form>
+        <p>Type Character Name to Submit</p>
         <div className="name-input">
           <input
             type="text"
@@ -63,15 +64,15 @@ export default function CharacterCreator(props) {
       </form>
       <Link to={`/archive`}>
         <div className="submit">
-          <button onClick={ () => {
-            const settings = {
-              shouldIncludeBirthplace: birthplace,
-              shouldIncludeJob: job,
-              shouldIncludeResidence: residence,
-              shouldIncludeHeight: height,
-              shouldIncludeEyeColor: eyeColor
-            }
-            props.onCharacterSubmitted(name, settings) 
+          <button disabled={name.length < 1} onClick={ () => {
+              const settings = {
+                shouldIncludeBirthplace: birthplace,
+                shouldIncludeJob: job,
+                shouldIncludeResidence: residence,
+                shouldIncludeHeight: height,
+                shouldIncludeEyeColor: eyeColor
+              }
+              props.onCharacterSubmitted(name, settings) 
           }}>
             Submit
           </button>
