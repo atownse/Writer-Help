@@ -31,23 +31,23 @@ export default function CharacterCreator(props) {
         <div className="container center">
           <div className="character-creation">
             <label htmlFor="birthplace">Birthplace</label>
-            <input type="checkbox" name="birthplace" checked={ birthplace } onChange={ (e) => setBirthplace(!birthplace) } />
+            <input type="checkbox" id="birthplace" name="birthplace" checked={ birthplace } onChange={ (e) => setBirthplace(!birthplace) } />
           </div>
           <div className="character-creation">
             <label htmlFor="residence">Current City</label>
-            <input type="checkbox" name="residence" checked={ residence } onChange={ (e) => setResidence(!residence) } />
+            <input type="checkbox" id="residence" name="residence" checked={ residence } onChange={ (e) => setResidence(!residence) } />
           </div>
           <div className="character-creation">
             <label htmlFor="job">Job</label>
-            <input type="checkbox" name="job" checked={ job } onChange={ (e) => setJob(!job) } />
+            <input type="checkbox" id="job" name="job" checked={ job } onChange={ (e) => setJob(!job) } />
           </div>
           <div className="character-creation">
             <label htmlFor="height">Height</label>
-            <input type="checkbox" name="height" checked={ height } onChange={ (e) => setHeight(!height) } />
+            <input type="checkbox" id="height" name="height" checked={ height } onChange={ (e) => setHeight(!height) } />
           </div>
           <div className="character-creation">
             <label htmlFor="eyeColor">Eye Color</label>
-            <input type="checkbox" name="eyeColor" checked={ eyeColor } onChange={ (e) => setEyeColor(!eyeColor) } />
+            <input type="checkbox" id="eyeColor" name="eyeColor" checked={ eyeColor } onChange={ (e) => setEyeColor(!eyeColor) } />
           </div>
           {/* <div>
             <label htmlFor="music">Favorite Music</label>
