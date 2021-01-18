@@ -20,16 +20,17 @@ describe('App', () => {
     expect(screen.getByText('Make a Character')).toBeInTheDocument()
   }),
 
-  it('should route to archive correctly', () => {
+  it('should not route to archive if name input is blank', () => {
+    const history = createMemoryHistory()
     render(
-      <MemoryRouter>
+      <Router history={ history }>
         <App />
-      </MemoryRouter>
+      </Router>
     )
     
-    const archiveBtn = screen.getByText('View Characters')
+    const archiveBtn = screen.getByText('Submit')
     userEvent.click(archiveBtn)
-    expect(screen.getByText('Saved Characters')).toBeInTheDocument()
+    expect(screen.queryByText('Saved Characters')).not.toBeInTheDocument()
   }),
 
   it('should be able to create a new character', async () => {
@@ -42,8 +43,8 @@ describe('App', () => {
       </Router>
     )
     
-    const newCharacterBtn = screen.getByText('Create a Character')
-    userEvent.click(newCharacterBtn)
+    // const newCharacterBtn = screen.getByText('Create a Character')
+    // userEvent.click(newCharacterBtn)
     
     const nameInput = screen.getByPlaceholderText('Character Name Here')
     userEvent.type(nameInput, 'Brad')
