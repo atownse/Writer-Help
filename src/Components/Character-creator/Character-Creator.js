@@ -1,6 +1,7 @@
 import React, { useState }from 'react'
 import './Character-Creator.css'
 import { Link } from 'react-router-dom'
+import PropTypes from 'prop-types'
 
 export default function CharacterCreator(props) {
   const [name, setName] = useState('')
@@ -80,4 +81,8 @@ export default function CharacterCreator(props) {
       </Link>
     </div>
   )
+}
+
+CharacterCreator.propTypes = {
+  onCharacterSubmitted: PropTypes.func
 }

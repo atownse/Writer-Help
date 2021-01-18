@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import './Archive.css'
 import Card from '../Card/Card'
 import { Link } from 'react-router-dom'
+import PropTypes from 'prop-types'
 
 class Archive extends Component {
 
@@ -49,3 +50,7 @@ class Archive extends Component {
 }
 
 export default Archive
+
+Archive.propTypes = {
+  characters: PropTypes.array
+}
