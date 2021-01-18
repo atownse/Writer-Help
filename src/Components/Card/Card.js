@@ -1,7 +1,7 @@
 import React from 'react'
 // import './Card.css'
 
-export default function Card({id, name, birthplace, job, residence, height, eyeColor, music, quote, insult}) {
+export default function Card({id, name, birthplace, job, residence, height, eyeColor}) {
   return (
       <section id={ id }>
         <h2>{ name }</h2>
@@ -10,9 +10,6 @@ export default function Card({id, name, birthplace, job, residence, height, eyeC
         <p>Home: { residence || 'Unknown' }</p>
         <p>Height: { height || 'Unknown' }</p>
         <p>Eye Color: { eyeColor || 'Unknown' }</p>
-        <p>Favorite music type: { music || 'None' }</p>
-        <p>Favorite Quote: { quote || 'None' }</p>
-        <p>Favorite Insult: { insult || 'None' }</p>
       </section>
   )
 }

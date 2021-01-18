@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import Card from '../Card/Card'
+import { Link } from 'react-router-dom'
 
 class Archive extends Component {
 
@@ -7,6 +8,7 @@ class Archive extends Component {
     let characters = cards.map(card => {
       return (
         <Card
+          key={ Math.floor(Math.random() * 1000) }
           id={ card.id }
           name={ card.name }
           job={ card.job }
@@ -14,9 +16,6 @@ class Archive extends Component {
           residence={ card.residence }
           height={ card.height } 
           eyeColor={ card.eyeColor } 
-          music={ card.music } 
-          quote={ card.quote } 
-          insult={ card.insult } 
         />
       )
     })
@@ -29,7 +28,15 @@ class Archive extends Component {
     let characterCards = this.createCharacterCards(this.props.characters)
     return (
       <div>
-        <h1>Saved Characters</h1>
+        <div>
+          <Link to="/">
+            <button>Home</button>
+          </Link>
+          <h1>Saved Characters</h1>
+          <Link to="/character-creator">
+            <button>Create New Character</button>
+          </Link>
+        </div>
         <div>
           { characterCards }
         </div>
