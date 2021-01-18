@@ -4,7 +4,7 @@ import Home from '../Home/Home'
 import CharacterCreator from '../Character-Creator/Character-Creator'
 import Archive from '../Archive/Archive'
 import Error from '../Error/Error'
-import { BrowserRouter as Router, Switch, Route } from "react-router-dom"
+import { BrowserRouter as Switch, Route } from "react-router-dom"
 import api from '../../utils/api'
 
 class App extends Component {
@@ -17,14 +17,8 @@ class App extends Component {
   }
 
   handleCharacterSubmitted(name, settings) {
-    // console.log('handling submit', name, birthplace)
-  // check data to see what api we need to call
-  
-  // call apis, get response
     api.getRandomPerson()
       .then(response => {
-        console.log(response)
-        // when response is gotten, call setCharacters, then route to archive
         const person = response.data.person
         const newCharacter = {
           name: name,
@@ -34,7 +28,6 @@ class App extends Component {
           height: settings.shouldIncludeHeight && person.personal.height,
           eyeColor: settings.shouldIncludeEyeColor && person.personal.eye_color
         }
-        console.log('new charachter', newCharacter)
         this.setState({ characters: [...this.state.characters, newCharacter] })
       })
       .catch((err) => this.setState({error: err.message}))

@@ -10,9 +10,6 @@ export default function CharacterCreator(props) {
   const [job, setJob] = useState(false)
   const [height, setHeight] = useState(false)
   const [eyeColor, setEyeColor] = useState(false)
-  // const [music, setMusic] = useState('')
-  // const [quote, setQuote] = useState('')
-  // const [insult, setInsult] = useState('')
 
   return (
     <div className="complete-page center">
@@ -49,18 +46,6 @@ export default function CharacterCreator(props) {
             <label htmlFor="eyeColor">Eye Color</label>
             <input type="checkbox" id="eyeColor" name="eyeColor" checked={ eyeColor } onChange={ (e) => setEyeColor(!eyeColor) } />
           </div>
-          {/* <div>
-            <label htmlFor="music">Favorite Music</label>
-            <input type="checkbox" name="music" checked={ music } onChange={ (e) => setMusic(!music) } />
-          </div>
-          <div>
-            <label htmlFor="quote">Favorite Quote</label>
-            <input type="checkbox" name="quote" checked={ quote } onChange={ (e) => setQuote(!quote) } />
-          </div>
-          <div>
-            <label htmlFor="insult">Favorite Insult</label>
-            <input type="checkbox" name="insult" checked={ insult } onChange={ (e) => setInsult(!insult) } />
-          </div> */}
         </div>
       </form>
       <Link to={`/archive`}>

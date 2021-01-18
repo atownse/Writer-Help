@@ -25,8 +25,6 @@ class Archive extends Component {
   }
 
   render() {  
-    // console.log('props characters', this.props.characters)
-    // console.log('state characters', this.state.characters)
     let characterCards = this.createCharacterCards(this.props.characters)
     return (
       <div>

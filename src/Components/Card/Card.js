@@ -18,9 +18,11 @@ export default function Card({id, name, birthplace, job, residence, height, eyeC
 Card.propTypes = {
   id: PropTypes.number,
   name: PropTypes.string,
-  birthplace: PropTypes.string,
-  job: PropTypes.string,
-  residence: PropTypes.string,
-  height: PropTypes.string,
-  eyeColor: PropTypes.string
+  // birthplace: PropTypes.string,
+  // job: PropTypes.string,
+  // residence: PropTypes.string,
+  // height: PropTypes.string,
+  // eyeColor: PropTypes.string
+
+  // these props are changing from booleans to strings, I need to ask how I can strictly enforce them to be passed as strings even though the states were set as booleans and are parameters for the api call
 }
