@@ -3,6 +3,7 @@ import React, { Component } from 'react'
 import Home from '../Home/Home'
 import CharacterCreator from '../Character-Creator/Character-Creator'
 import Archive from '../Archive/Archive'
+import Error from '../Error/Error'
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom"
 import api from '../../utils/api'
 
@@ -10,7 +11,8 @@ class App extends Component {
   constructor() {
     super()
     this.state = {
-      characters: []
+      characters: [],
+      error: ''
     }
   }
 
@@ -35,6 +37,7 @@ class App extends Component {
         console.log('new charachter', newCharacter)
         this.setState({ characters: [...this.state.characters, newCharacter] })
       })
+      .catch((err) => this.setState({error: err.message}))
   }
   
   render() {
@@ -42,6 +45,7 @@ class App extends Component {
     return (
       <main>
         <Switch>
+          {this.state.error && <Route component={ Error } />}
           <Route path="/character-creator">
             <CharacterCreator onCharacterSubmitted={ (name, settings) => this.handleCharacterSubmitted(name, settings) } />
           </Route>
