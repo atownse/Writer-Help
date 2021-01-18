@@ -4,7 +4,7 @@ import './Home.css'
 
 export default function Home() {
   return (
-    <div>
+    <div className="center">
       <h1>Howdy, Writer</h1>
       <h2>Need Help?</h2>
       <div className="button-container">

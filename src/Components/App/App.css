@@ -6,6 +6,9 @@ div {
   display: flex;
   justify-content: center;
   flex-direction: column;
+}
+
+.center {
   align-items: center;
 }
 

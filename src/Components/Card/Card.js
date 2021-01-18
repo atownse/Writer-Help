@@ -1,9 +1,9 @@
 import React from 'react'
-// import './Card.css'
+import './Card.css'
 
 export default function Card({id, name, birthplace, job, residence, height, eyeColor}) {
   return (
-      <section id={ id }>
+      <section id={ id } className="card">
         <h2>{ name }</h2>
         <p>Profession: { job || 'Unknown' }</p>
         <p>Birthplace: { birthplace || 'Unknown' }</p>

@@ -1,5 +1,6 @@
 .character-creation {
   flex-direction: row;
+  align-items: center;
 }
 
 label {
