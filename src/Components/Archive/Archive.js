@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import './Archive.css'
 import Card from '../Card/Card'
 import { Link } from 'react-router-dom'
 
@@ -28,16 +29,18 @@ class Archive extends Component {
     let characterCards = this.createCharacterCards(this.props.characters)
     return (
       <div>
-        <div>
+        <div className="header center">
+          <h1>Saved Characters</h1>
+        </div>
+        <div className="archive-header">
           <Link to="/">
             <button>Home</button>
           </Link>
-          <h1>Saved Characters</h1>
           <Link to="/character-creator">
             <button>Create New Character</button>
           </Link>
         </div>
-        <div>
+        <div className="character-container">
           { characterCards }
         </div>
       </div>

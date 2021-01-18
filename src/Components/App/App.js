@@ -7,7 +7,6 @@ import { BrowserRouter as Router, Switch, Route } from "react-router-dom"
 import api from '../../utils/api'
 
 class App extends Component {
-  // const [characters, setCharacters] = useState([])
   constructor() {
     super()
     this.state = {

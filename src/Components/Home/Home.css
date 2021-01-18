@@ -1,0 +1,8 @@
+.button-container {
+  margin: 3em;
+  flex-direction: row;
+}
+
+.home-buttons {
+  margin: 2em;
+}

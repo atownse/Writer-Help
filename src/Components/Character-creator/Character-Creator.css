@@ -1,27 +1,10 @@
-h1 {
-  display: flex;
-  justify-content: center;
-}
-
-.name-input {
-  display: flex;
-  justify-content: center;
-}
-
-.container {
-  display: flex;
-  justify-content: space-around;
-  flex-direction: row;
-}
-
 .character-creation {
-  display: flex;
-  justify-content: center;
-  flex-direction: column;
+  flex-direction: row;
+  align-items: center;
 }
 
-.submit {
+label {
   display: flex;
-  justify-content: center;
+  justify-content: start;
+  margin: 1em;
 }
-

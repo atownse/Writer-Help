@@ -14,7 +14,7 @@ export default function CharacterCreator(props) {
   // const [insult, setInsult] = useState('')
 
   return (
-    <div className="complete-page">
+    <div className="complete-page center">
       <h1>Make a Character</h1>
       <form>
         <p>Type Character Name to Submit</p>
@@ -27,24 +27,24 @@ export default function CharacterCreator(props) {
             onChange={ (e) => setName(e.target.value) }
           />
         </div>
-        <div className="container">
+        <div className="container center">
           <div className="character-creation">
             <label htmlFor="birthplace">Birthplace</label>
             <input type="checkbox" name="birthplace" checked={ birthplace } onChange={ (e) => setBirthplace(!birthplace) } />
           </div>
-          <div>
+          <div className="character-creation">
             <label htmlFor="residence">Current City</label>
             <input type="checkbox" name="residence" checked={ residence } onChange={ (e) => setResidence(!residence) } />
           </div>
-          <div>
+          <div className="character-creation">
             <label htmlFor="job">Job</label>
             <input type="checkbox" name="job" checked={ job } onChange={ (e) => setJob(!job) } />
           </div>
-          <div>
+          <div className="character-creation">
             <label htmlFor="height">Height</label>
             <input type="checkbox" name="height" checked={ height } onChange={ (e) => setHeight(!height) } />
           </div>
-          <div>
+          <div className="character-creation">
             <label htmlFor="eyeColor">Eye Color</label>
             <input type="checkbox" name="eyeColor" checked={ eyeColor } onChange={ (e) => setEyeColor(!eyeColor) } />
           </div>
